@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Force Number</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="title-area">
+        <div class="signal-dot"></div>
+        <div class="title-text">Набор</div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button" id="searchBtn" aria-label="Поиск">
+          <span class="icon search"></span>
+        </button>
+        <button class="icon-button" id="menuBtn" aria-label="Меню редактирования">
+          <span class="icon dots"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-screen">
+      <div class="display-panel" id="displayPanel" aria-live="polite">0</div>
+      <div class="status-row">
+        <div class="mode-chip" id="secretStatus">Обычный ввод</div>
+        <div class="info-text" id="infoText">Нажмите ⋮, чтобы задать число.</div>
+      </div>
+
+      <div class="keypad" id="keypad">
+        <button class="key" data-value="1"><span class="key-num">1</span><span class="key-sub">&nbsp;</span></button>
+        <button class="key" data-value="2"><span class="key-num">2</span><span class="key-sub">ABC<br>АБВ</span></button>
+        <button class="key" data-value="3"><span class="key-num">3</span><span class="key-sub">DEF<br>ДЕЁЖЗ</span></button>
+        <button class="key" data-value="4"><span class="key-num">4</span><span class="key-sub">GHI<br>ИЙКЛ</span></button>
+        <button class="key" data-value="5"><span class="key-num">5</span><span class="key-sub">JKL<br>МНОП</span></button>
+        <button class="key" data-value="6"><span class="key-num">6</span><span class="key-sub">MNO<br>РСТУ</span></button>
+        <button class="key" data-value="7"><span class="key-num">7</span><span class="key-sub">PQRS<br>ФХЦЧ</span></button>
+        <button class="key" data-value="8"><span class="key-num">8</span><span class="key-sub">TUV<br>ШЩЪЫ</span></button>
+        <button class="key" data-value="9"><span class="key-num">9</span><span class="key-sub">WXYZ<br>ЬЭЮЯ</span></button>
+        <button class="key" data-value="*"><span class="key-num">*</span><span class="key-sub">&nbsp;</span></button>
+        <button class="key" data-value="0"><span class="key-num">0</span><span class="key-sub">+</span></button>
+        <button class="key" data-value="#"><span class="key-num">#</span><span class="key-sub">&nbsp;</span></button>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active">▦<span>Набор</span></button>
+      <button class="nav-item">↺<span>Последние</span></button>
+      <button class="nav-item">☺<span>Контакты</span></button>
+    </nav>
+  </div>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <div>Редактирование</div>
+        <button class="icon-button" id="closeDrawer" aria-label="Закрыть">✕</button>
+      </div>
+      <p>Введите число для секретного режима. Оно сохраняется автоматически.</p>
+      <label class="drawer-field">
+        <span>Секретное число</span>
+        <input type="text" id="secretInput" inputmode="numeric" pattern="[0-9]*" placeholder="Например 17" />
+      </label>
+      <div class="drawer-hint">После нажатия поиска переверните телефон экраном вниз для активации.</div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
