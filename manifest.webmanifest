@@ -1,0 +1,19 @@
+{
+  "name": "Набор",
+  "short_name": "Набор",
+  "description": "Офлайн-клавиатура набора с сохранённым секретным числом.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8f9fb",
+  "theme_color": "#f8f9fb",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

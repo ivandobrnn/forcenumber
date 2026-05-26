@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f9fb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Набор" />
+  <title>Набор</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="phone-app">
+    <header class="topbar" aria-label="Верхняя панель">
+      <button class="icon-button search-button" id="searchBtn" aria-label="Поиск">
+        <span aria-hidden="true"></span>
+      </button>
+      <button class="icon-button menu-button" id="menuBtn" aria-label="Меню редактирования">
+        <span aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main class="dialer">
+      <output class="number-display" id="displayPanel" aria-live="polite"></output>
+
+      <section class="keypad" id="keypad" aria-label="Клавиатура набора">
+        <button class="key" data-value="1" aria-label="1">
+          <span class="key-num">1</span>
+          <span class="key-sub special">∞</span>
+        </button>
+        <button class="key" data-value="2" aria-label="2 ABC АБВГ">
+          <span class="key-num">2</span>
+          <span class="key-sub">ABC<br>АБВГ</span>
+        </button>
+        <button class="key" data-value="3" aria-label="3 DEF ДЕЁЖЗ">
+          <span class="key-num">3</span>
+          <span class="key-sub">DEF<br>ДЕЁЖЗ</span>
+        </button>
+        <button class="key" data-value="4" aria-label="4 GHI ИЙКЛ">
+          <span class="key-num">4</span>
+          <span class="key-sub">GHI<br>ИЙКЛ</span>
+        </button>
+        <button class="key" data-value="5" aria-label="5 JKL МНОП">
+          <span class="key-num">5</span>
+          <span class="key-sub">JKL<br>МНОП</span>
+        </button>
+        <button class="key" data-value="6" aria-label="6 MNO РСТУ">
+          <span class="key-num">6</span>
+          <span class="key-sub">MNO<br>РСТУ</span>
+        </button>
+        <button class="key" data-value="7" aria-label="7 PQRS ФХЦЧ">
+          <span class="key-num">7</span>
+          <span class="key-sub">PQRS<br>ФХЦЧ</span>
+        </button>
+        <button class="key" data-value="8" aria-label="8 TUV ШЩЪЫ">
+          <span class="key-num">8</span>
+          <span class="key-sub">TUV<br>ШЩЪЫ</span>
+        </button>
+        <button class="key" data-value="9" aria-label="9 WXYZ ЬЭЮЯ">
+          <span class="key-num">9</span>
+          <span class="key-sub">WXYZ<br>ЬЭЮЯ</span>
+        </button>
+        <button class="key symbol" data-value="*" aria-label="Звездочка">
+          <span class="key-num">*</span>
+        </button>
+        <button class="key" data-value="0" aria-label="0 плюс">
+          <span class="key-num">0</span>
+          <span class="key-sub plus">+</span>
+        </button>
+        <button class="key symbol" data-value="#" aria-label="Решетка">
+          <span class="key-num">#</span>
+        </button>
+      </section>
+
+      <button class="call-button" id="callBtn" aria-label="Позвонить">
+        <span aria-hidden="true"></span>
+      </button>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Навигация">
+      <button class="nav-item active" type="button" aria-current="page">
+        <span class="nav-icon dialpad" aria-hidden="true"></span>
+        <span>Набор</span>
+      </button>
+      <button class="nav-item" type="button">
+        <span class="nav-icon recents" aria-hidden="true"></span>
+        <span>Последние</span>
+      </button>
+      <button class="nav-item" type="button">
+        <span class="nav-icon contacts" aria-hidden="true"></span>
+        <span>Контакты</span>
+      </button>
+    </nav>
+    <div class="home-indicator" aria-hidden="true"></div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="editor" id="drawer" aria-hidden="true" aria-label="Меню редактирования">
+    <div class="editor-panel" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+      <div class="editor-head">
+        <h1 id="editorTitle">Редактирование</h1>
+        <button class="close-button" id="closeDrawer" aria-label="Закрыть">×</button>
+      </div>
+      <label class="field">
+        <span>Секретное число</span>
+        <input id="secretInput" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" placeholder="Например 17" />
+      </label>
+      <p class="editor-status" id="infoText">Нажмите поиск, затем переверните телефон экраном вниз.</p>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
